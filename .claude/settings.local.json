@@ -13,7 +13,9 @@
       "Bash(npm test:*)",
       "Bash(npm run lint)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebSearch",
+      "WebFetch(domain:instantdomainsearch.com)"
     ]
   }
 }
