@@ -15,6 +15,8 @@ function isAuthenticated(serviceId) {
 }
 
 function selectService(serviceId) {
+  // Prefetch route for faster navigation
+  import('@/views/ServiceDimension.vue')
   emit('select', serviceId)
 }
 

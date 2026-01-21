@@ -27,12 +27,18 @@ function checkMobile() {
 }
 
 function handleServiceSelect(serviceId) {
-  router.push(`/service/${serviceId}`)
+  router.push(`/service/${serviceId}/dimension`)
 }
 
 onMounted(() => {
   checkMobile()
   window.addEventListener('resize', checkMobile)
+
+  // Reset universe store state when returning to universe
+  universeStore.clearSelection()
+  universeStore.clearHoveredNode()
+  universeStore.setPortalActive(false)
+  universeStore.setTransitioning(false)
 })
 
 onUnmounted(() => {
@@ -81,6 +87,10 @@ onUnmounted(() => {
           <span class="key">Hover</span>
           <span class="action">Preview Service</span>
         </div>
+        <div class="instruction-item">
+          <span class="key">Scroll</span>
+          <span class="action">Zoom In/Out</span>
+        </div>
       </div>
     </Transition>
   </div>
@@ -93,6 +103,7 @@ onUnmounted(() => {
   height: 100vh;
   overflow: hidden;
   background: #0a0a15;
+  transform: translateZ(0);
 }
 
 .title-overlay {

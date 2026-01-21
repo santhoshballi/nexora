@@ -14,9 +14,9 @@ onMounted(() => {
 <template>
   <div id="nexus-app">
     <router-view v-slot="{ Component, route }">
-      <transition :name="route.meta.transition || 'fade'" mode="out-in">
+      <keep-alive :include="route.meta.keepAlive ? [route.name] : []">
         <component :is="Component" :key="route.path" />
-      </transition>
+      </keep-alive>
     </router-view>
   </div>
 </template>
@@ -38,6 +38,9 @@ onMounted(() => {
     Oxygen,
     Ubuntu,
     sans-serif;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Base reset */

@@ -51,10 +51,10 @@ onMounted(() => {
       gsap.fromTo(
         contentRef.value,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }
       )
     }
-  }, 500)
+  }, 300)
 })
 
 function goBack() {
@@ -190,7 +190,8 @@ function handleAuthClose() {
   height: 100%;
   background: var(--service-color);
   z-index: 100;
-  animation: flash-out 0.5s ease-out forwards;
+  animation: flash-out 0.4s ease-out forwards;
+  will-change: opacity;
 }
 
 .dimension-background {
@@ -200,6 +201,7 @@ function handleAuthClose() {
   width: 100%;
   height: 100%;
   z-index: 0;
+  transform: translateZ(0);
 }
 
 .pattern {
@@ -298,6 +300,7 @@ function handleAuthClose() {
   padding: 70px 2rem 2rem;
   max-width: 900px;
   margin: 0 auto;
+  will-change: opacity, transform;
 }
 
 .hero-section {
@@ -491,7 +494,7 @@ function handleAuthClose() {
 
 @keyframes flash-out {
   0% {
-    opacity: 1;
+    opacity: 0.6;
   }
   100% {
     opacity: 0;

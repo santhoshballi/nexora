@@ -71,6 +71,7 @@ export function useThreeUniverse(containerRef) {
     window.addEventListener('resize', onResize)
     containerRef.value.addEventListener('mousemove', onMouseMove)
     containerRef.value.addEventListener('click', onClick)
+    containerRef.value.addEventListener('wheel', onWheel, { passive: false })
 
     isReady.value = true
   }
@@ -285,6 +286,9 @@ export function useThreeUniverse(containerRef) {
       if (node.userData.serviceId) {
         universeStore.setHoveredNode(node.userData.serviceId)
         document.body.style.cursor = 'pointer'
+
+        // Prefetch route for faster navigation
+        import('@/views/ServiceDimension.vue')
       }
     } else {
       universeStore.clearHoveredNode()
@@ -308,6 +312,22 @@ export function useThreeUniverse(containerRef) {
     }
   }
 
+  function onWheel(event) {
+    event.preventDefault()
+
+    // Zoom limits
+    const minZoom = 5
+    const maxZoom = 50
+    const zoomSpeed = 0.5
+
+    // Calculate new zoom position
+    const delta = event.deltaY * 0.01
+    const newZ = camera.value.position.z + delta * zoomSpeed
+
+    // Apply zoom with limits
+    camera.value.position.z = Math.max(minZoom, Math.min(maxZoom, newZ))
+  }
+
   function flyToNode(serviceId) {
     const node = nodes.value[serviceId]
     if (!node) return
@@ -324,7 +344,7 @@ export function useThreeUniverse(containerRef) {
       x: targetPosition.x,
       y: targetPosition.y,
       z: targetPosition.z,
-      duration: 1.5,
+      duration: 1,
       ease: 'power2.inOut',
       onComplete: () => {
         universeStore.setPortalActive(true)
@@ -339,7 +359,7 @@ export function useThreeUniverse(containerRef) {
       x: 0,
       y: 0,
       z: 20,
-      duration: 1.2,
+      duration: 0.8,
       ease: 'power2.inOut',
       onComplete: () => {
         universeStore.setTransitioning(false)
@@ -358,6 +378,7 @@ export function useThreeUniverse(containerRef) {
     if (containerRef.value) {
       containerRef.value.removeEventListener('mousemove', onMouseMove)
       containerRef.value.removeEventListener('click', onClick)
+      containerRef.value.removeEventListener('wheel', onWheel)
     }
 
     if (renderer.value) {

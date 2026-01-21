@@ -5,7 +5,10 @@ const routes = [
   {
     path: '/',
     name: 'Universe',
-    component: () => import('@/views/Universe.vue')
+    component: () => import('@/views/Universe.vue'),
+    meta: {
+      keepAlive: true
+    }
   },
   {
     path: '/service/:id',
@@ -24,7 +27,10 @@ const routes = [
     name: 'ServiceDashboard',
     component: () => import('@/views/ServiceDashboard.vue'),
     props: true,
-    meta: { requiresAuth: true }
+    meta: {
+      requiresAuth: true,
+      keepAlive: true
+    }
   }
 ]
 

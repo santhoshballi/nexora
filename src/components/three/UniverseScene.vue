@@ -18,7 +18,7 @@ watch(
   active => {
     if (active && universeStore.selectedNode) {
       startPortalTransition(universeStore.selectedNode, () => {
-        router.push(`/service/${universeStore.selectedNode}`)
+        router.push(`/service/${universeStore.selectedNode}/dimension`)
       })
     }
   }
@@ -65,6 +65,8 @@ defineExpose({ resetCamera })
   width: 100vw;
   height: 100vh;
   z-index: 0;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .canvas-container {
@@ -88,6 +90,8 @@ defineExpose({ resetCamera })
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
 .portal-ring {
@@ -98,6 +102,7 @@ defineExpose({ resetCamera })
   border-radius: 50%;
   animation: portal-spin 1s linear infinite;
   opacity: calc(1 - var(--progress, 0));
+  will-change: width, height, opacity, transform;
 }
 
 .portal-glow {
@@ -111,6 +116,7 @@ defineExpose({ resetCamera })
     rgba(125, 249, 255, 0) 70%
   );
   border-radius: 50%;
+  will-change: width, height;
 }
 
 .portal-flash {

@@ -36,7 +36,7 @@ export function usePortalTransition() {
     // Phase 1: Portal opening (crack effect)
     timeline.to(progress, {
       value: 0.3,
-      duration: 0.5,
+      duration: 0.3,
       ease: 'power2.in',
       onComplete: () => {
         transitionPhase.value = 'traveling'
@@ -46,14 +46,14 @@ export function usePortalTransition() {
     // Phase 2: Acceleration through portal
     timeline.to(progress, {
       value: 0.8,
-      duration: 0.8,
+      duration: 0.5,
       ease: 'power4.in'
     })
 
     // Phase 3: Deceleration and arrival
     timeline.to(progress, {
       value: 1,
-      duration: 0.4,
+      duration: 0.3,
       ease: 'power2.out',
       onStart: () => {
         transitionPhase.value = 'closing'
