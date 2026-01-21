@@ -300,33 +300,33 @@ function handleAuthClose() {
 .dimension-content {
   position: relative;
   z-index: 1;
-  padding: 120px 2rem 6rem;
+  padding: 100px 2rem 4rem;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .hero-section {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .hero-icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 2rem;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   background: linear-gradient(135deg, var(--service-color), var(--accent-color));
-  border-radius: 20px;
+  border-radius: 16px;
   color: white;
   box-shadow: 0 0 60px rgba(125, 249, 255, 0.3);
 }
 
 .hero-title {
-  margin: 0 0 0.5rem;
-  font-size: 3rem;
+  margin: 0 0 0.25rem;
+  font-size: 2.5rem;
   font-weight: 200;
   color: var(--service-color);
   letter-spacing: 0.3em;
@@ -334,8 +334,8 @@ function handleAuthClose() {
 }
 
 .hero-tagline {
-  margin: 0 0 1.5rem;
-  font-size: 1rem;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -343,9 +343,9 @@ function handleAuthClose() {
 
 .hero-description {
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -355,12 +355,12 @@ function handleAuthClose() {
   font-weight: 600;
   color: var(--service-color);
   letter-spacing: 0.3em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .features-section {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .features-grid {
@@ -372,7 +372,7 @@ function handleAuthClose() {
 .feature-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
+  padding: 1rem 1.25rem;
   transition: all 0.3s ease;
   animation: feature-enter 0.5s ease-out forwards;
   animation-delay: var(--delay);

@@ -74,7 +74,7 @@ function requestAccess() {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 350px;
+  min-height: 280px;
   background: rgba(10, 10, 21, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -88,14 +88,14 @@ function requestAccess() {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .lock-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   color: var(--service-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   opacity: 0.8;
   animation: pulse 2s ease-in-out infinite;
 }
@@ -107,17 +107,17 @@ function requestAccess() {
 
 .gate-title {
   margin: 0 0 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 300;
   color: var(--service-color);
   letter-spacing: 0.3em;
 }
 
 .gate-message {
-  margin: 0 0 2rem;
-  font-size: 0.875rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.5);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .service-name {
@@ -128,8 +128,8 @@ function requestAccess() {
 .unlock-button {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
   background: transparent;
   border: 1px solid var(--service-color);
   color: var(--service-color);
@@ -144,11 +144,11 @@ function requestAccess() {
 }
 
 .button-icon {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .button-text {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.2em;
 }
