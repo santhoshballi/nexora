@@ -98,11 +98,6 @@ function handleAuthClose() {
         <span class="back-text">UNIVERSE</span>
       </button>
 
-      <div class="service-badge">
-        <span class="badge-icon">{{ service?.icon }}</span>
-        <span class="badge-name">{{ service?.name }}</span>
-      </div>
-
       <div class="header-spacer"></div>
     </header>
 
@@ -300,33 +295,33 @@ function handleAuthClose() {
 .dimension-content {
   position: relative;
   z-index: 1;
-  padding: 100px 2rem 4rem;
+  padding: 70px 2rem 2rem;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .hero-section {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .hero-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   background: linear-gradient(135deg, var(--service-color), var(--accent-color));
-  border-radius: 16px;
+  border-radius: 12px;
   color: white;
-  box-shadow: 0 0 60px rgba(125, 249, 255, 0.3);
+  box-shadow: 0 0 40px rgba(125, 249, 255, 0.3);
 }
 
 .hero-title {
   margin: 0 0 0.25rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 200;
   color: var(--service-color);
   letter-spacing: 0.3em;
@@ -334,8 +329,8 @@ function handleAuthClose() {
 }
 
 .hero-tagline {
-  margin: 0 0 1rem;
-  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -343,36 +338,36 @@ function handleAuthClose() {
 
 .hero-description {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
+  line-height: 1.4;
   max-width: 600px;
   margin: 0 auto;
 }
 
 .section-title {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--service-color);
   letter-spacing: 0.3em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
 .features-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
 }
 
 .feature-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1rem;
   transition: all 0.3s ease;
   animation: feature-enter 0.5s ease-out forwards;
   animation-delay: var(--delay);

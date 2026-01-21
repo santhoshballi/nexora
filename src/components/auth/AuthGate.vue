@@ -74,11 +74,11 @@ function requestAccess() {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 280px;
+  min-height: 220px;
   background: rgba(10, 10, 21, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .gate-content {
@@ -88,14 +88,14 @@ function requestAccess() {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .lock-icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   color: var(--service-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   opacity: 0.8;
   animation: pulse 2s ease-in-out infinite;
 }
@@ -106,18 +106,18 @@ function requestAccess() {
 }
 
 .gate-title {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
   font-weight: 300;
   color: var(--service-color);
   letter-spacing: 0.3em;
 }
 
 .gate-message {
-  margin: 0 0 1.25rem;
-  font-size: 0.8rem;
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .service-name {
