@@ -94,7 +94,7 @@ function handleAuthClose() {
     <!-- Navigation -->
     <header class="dimension-header">
       <button class="back-button" @click="goBack">
-        <span class="back-arrow">\u2190</span>
+        <span class="back-arrow">←</span>
         <span class="back-text">UNIVERSE</span>
       </button>
 
@@ -139,12 +139,12 @@ function handleAuthClose() {
         <template v-if="isAuthenticated">
           <div class="authenticated-panel">
             <div class="auth-status">
-              <span class="status-icon">\u2713</span>
+              <span class="status-icon">✓</span>
               <span class="status-text">Access Granted</span>
             </div>
             <button class="dashboard-button" @click="goToDashboard">
               <span class="button-text">ENTER DASHBOARD</span>
-              <span class="button-arrow">\u2192</span>
+              <span class="button-arrow">→</span>
             </button>
           </div>
         </template>
@@ -300,7 +300,7 @@ function handleAuthClose() {
 .dimension-content {
   position: relative;
   z-index: 1;
-  padding: 120px 2rem 4rem;
+  padding: 120px 2rem 6rem;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -399,6 +399,7 @@ function handleAuthClose() {
 .access-section {
   max-width: 500px;
   margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
 .authenticated-panel {

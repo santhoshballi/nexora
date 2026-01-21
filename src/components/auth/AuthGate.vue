@@ -55,7 +55,7 @@ function requestAccess() {
 
       <!-- Unlock button -->
       <button class="unlock-button" @click="requestAccess">
-        <span class="button-icon">\u26BF</span>
+        <span class="button-icon">⚿</span>
         <span class="button-text">AUTHENTICATE</span>
       </button>
 
@@ -74,10 +74,11 @@ function requestAccess() {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
+  min-height: 350px;
   background: rgba(10, 10, 21, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 .gate-content {

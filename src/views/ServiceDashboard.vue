@@ -97,11 +97,11 @@ function formatStatValue(value) {
     <header class="dashboard-header">
       <div class="header-left">
         <button class="nav-button" @click="goBack">
-          <span>\u2190</span>
+          <span>←</span>
           <span>{{ service?.name }}</span>
         </button>
         <button class="nav-button" @click="goToUniverse">
-          <span>\u25CB</span>
+          <span>○</span>
           <span>UNIVERSE</span>
         </button>
       </div>
@@ -168,11 +168,11 @@ function formatStatValue(value) {
               <span class="action-label">New Project</span>
             </button>
             <button class="action-card">
-              <span class="action-icon">\u21BB</span>
+              <span class="action-icon">↻</span>
               <span class="action-label">Sync Data</span>
             </button>
             <button class="action-card">
-              <span class="action-icon">\u2699</span>
+              <span class="action-icon">⚙</span>
               <span class="action-label">Settings</span>
             </button>
             <button class="action-card">

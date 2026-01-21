@@ -69,7 +69,7 @@ watch(scanPhase, phase => {
   <div class="auth-form-overlay" @click.self="handleClose">
     <div class="auth-form" :style="formStyle">
       <!-- Close button -->
-      <button class="close-button" @click="handleClose">\u2715</button>
+      <button class="close-button" @click="handleClose">✕</button>
 
       <!-- Header -->
       <div class="form-header">
@@ -133,7 +133,7 @@ watch(scanPhase, phase => {
         <!-- Error message -->
         <Transition name="fade">
           <div v-if="error" class="error-message">
-            <span class="error-icon">\u26A0</span>
+            <span class="error-icon">⚠</span>
             <span>{{ error }}</span>
           </div>
         </Transition>

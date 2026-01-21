@@ -30,7 +30,7 @@ const previewStyle = computed(() => ({
         <p class="service-tagline">{{ service.tagline }}</p>
       </div>
       <div v-if="isAuthenticated" class="auth-badge">
-        <span class="badge-icon">\u2713</span>
+        <span class="badge-icon">✓</span>
         <span class="badge-text">Unlocked</span>
       </div>
     </div>
@@ -45,7 +45,7 @@ const previewStyle = computed(() => ({
 
     <div class="preview-footer">
       <span class="enter-hint">Click to enter dimension</span>
-      <span class="arrow">\u2192</span>
+      <span class="arrow">→</span>
     </div>
 
     <!-- Decorative elements -->

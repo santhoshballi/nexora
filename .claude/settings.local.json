@@ -11,7 +11,9 @@
       "Bash(git init:*)",
       "Bash(npx husky init)",
       "Bash(npm test:*)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

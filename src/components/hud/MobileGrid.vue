@@ -45,7 +45,7 @@ function getServiceStyle(service) {
         <h3 class="card-name">{{ service.name }}</h3>
         <p class="card-tagline">{{ service.tagline }}</p>
 
-        <div v-if="isAuthenticated(service.id)" class="card-badge">\u2713</div>
+        <div v-if="isAuthenticated(service.id)" class="card-badge">✓</div>
 
         <div class="card-corner top-left"></div>
         <div class="card-corner top-right"></div>

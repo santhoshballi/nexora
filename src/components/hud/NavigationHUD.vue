@@ -32,7 +32,7 @@ function toggleViewMode() {
     <!-- Top right: View controls -->
     <div class="hud-corner top-right">
       <button v-if="!universeStore.isMobile" class="hud-button" @click="toggleViewMode">
-        <span class="button-icon">{{ universeStore.viewMode === '3d' ? '\u25A6' : '\u25CB' }}</span>
+        <span class="button-icon">{{ universeStore.viewMode === '3d' ? '▦' : '○' }}</span>
         <span class="button-label">{{ universeStore.viewMode === '3d' ? 'GRID' : '3D' }}</span>
       </button>
     </div>
