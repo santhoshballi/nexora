@@ -1,0 +1,30 @@
+@import './base.css';
+
+/* NEXORA Global Styles */
+a {
+  color: var(--nexora-blue);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Utility classes */
+.glow-blue {
+  box-shadow: 0 0 20px var(--nexora-blue);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px var(--nexora-purple);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px var(--nexora-pink);
+}

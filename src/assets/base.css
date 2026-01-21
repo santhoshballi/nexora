@@ -1,0 +1,46 @@
+/* NEXORA - Dark Theme Base */
+:root {
+  --nexora-black: #000000;
+  --nexora-dark: #050810;
+  --nexora-blue: #7df9ff;
+  --nexora-purple: #5a3fff;
+  --nexora-pink: #ff8bd4;
+  --nexora-text: #cfd3ff;
+  --nexora-text-dim: rgba(207, 211, 255, 0.6);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--nexora-black);
+  color: var(--nexora-text);
+  overflow: hidden;
+}
+
+body {
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}

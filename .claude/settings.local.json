@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(npm install:*)",
+      "Bash(timeout:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(powershell -Command \"Start-Sleep -Seconds 4\")",
+      "Bash(del NEXUS_DIMENSIONS.md)",
+      "Bash(git init:*)",
+      "Bash(npx husky init)",
+      "Bash(npm test:*)",
+      "Bash(npm run lint)"
+    ]
+  }
+}
