@@ -1,10 +1,12 @@
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { useUniverseStore } from '@/stores/universe'
 
 const authStore = useAuthStore()
 const universeStore = useUniverseStore()
+
+const isOnline = ref(navigator.onLine)
 
 const authenticatedCount = computed(() => {
   return authStore.authenticatedServices.length
@@ -13,19 +15,39 @@ const authenticatedCount = computed(() => {
 function toggleViewMode() {
   universeStore.toggleViewMode()
 }
+
+// Listen for online/offline events
+function updateOnlineStatus() {
+  isOnline.value = navigator.onLine
+}
+
+// Initialize and add event listeners
+if (typeof window !== 'undefined') {
+  // Set initial status
+  updateOnlineStatus()
+
+  // Add event listeners
+  window.addEventListener('online', updateOnlineStatus)
+  window.addEventListener('offline', updateOnlineStatus)
+
+  // Also check periodically as a fallback
+  setInterval(() => {
+    const currentStatus = navigator.onLine
+    if (currentStatus !== isOnline.value) {
+      updateOnlineStatus()
+    }
+  }, 5000) // Check every 5 seconds
+}
 </script>
 
 <template>
   <div class="navigation-hud">
     <!-- Top left: Logo & Status -->
     <div class="hud-corner top-left">
-      <div class="status-indicator">
-        <div class="status-dot" :class="{ active: true }"></div>
-        <span class="status-text">ONLINE</span>
-      </div>
-      <div v-if="authenticatedCount > 0" class="auth-status">
-        <span class="auth-count">{{ authenticatedCount }}</span>
-        <span class="auth-label">dimensions unlocked</span>
+      <div class="status-display">
+        <div class="status-dot" :class="{ active: isOnline }"></div>
+        <span class="status-text">Online</span>
+        <span v-if="authenticatedCount > 0" class="auth-text">dimensions unlocked</span>
       </div>
     </div>
 
@@ -111,48 +133,60 @@ function toggleViewMode() {
   align-items: flex-end;
 }
 
-.status-indicator {
+.status-display {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 255, 200, 0.6);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+}
+
+.status-display::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid rgba(0, 255, 200, 0.8);
+  border-top: 2px solid rgba(0, 255, 200, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #333;
+  background: #00ff41;
+  box-shadow: 0 0 10px #00ff41;
   transition: all 0.3s ease;
 }
 
-.status-dot.active {
-  background: #00ff41;
-  box-shadow: 0 0 10px #00ff41;
-  animation: pulse 2s ease-in-out infinite;
+.status-dot:not(.active) {
+  background: #ff6b6b;
+  box-shadow: 0 0 10px #ff6b6b;
 }
 
 .status-text {
-  font-size: 0.625rem;
-  color: rgba(125, 249, 255, 0.7);
-  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: rgba(0, 255, 200, 0.9);
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
 }
 
-.auth-status {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.625rem;
-}
-
-.auth-count {
-  color: #00ff41;
-  font-weight: bold;
-}
-
-.auth-label {
-  color: rgba(255, 255, 255, 0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.auth-text {
+  font-size: 0.7rem;
+  color: rgba(0, 255, 200, 0.8);
+  font-weight: 500;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  margin-left: 0.5rem;
 }
 
 .hud-button {

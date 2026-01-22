@@ -6,6 +6,7 @@ import { useServicesStore } from '@/stores/services'
 import { useAuthStore } from '@/stores/auth'
 import AuthForm from '@/components/auth/AuthForm.vue'
 import AuthGate from '@/components/auth/AuthGate.vue'
+import TypingGame from '@/components/games/TypingGame.vue'
 
 const props = defineProps({
   id: {
@@ -76,6 +77,10 @@ function handleAuthSuccess() {
 function handleAuthClose() {
   showAuthForm.value = false
 }
+
+function handleGameComplete() {
+  // Could save high score, unlock achievements, etc.
+}
 </script>
 
 <template>
@@ -103,8 +108,15 @@ function handleAuthClose() {
 
     <!-- Main content -->
     <main ref="contentRef" class="dimension-content">
-      <!-- Hero section -->
-      <section class="hero-section">
+      <!-- Typing Game for Cipher Service -->
+      <TypingGame
+        v-if="service?.id === 'cipher'"
+        :service="service"
+        @complete="handleGameComplete"
+      />
+
+      <!-- Hero section for other services -->
+      <section v-else class="hero-section">
         <div class="hero-icon">{{ service?.icon }}</div>
         <h1 class="hero-title">{{ service?.name }}</h1>
         <p class="hero-tagline">{{ service?.tagline }}</p>

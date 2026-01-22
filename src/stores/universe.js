@@ -10,7 +10,7 @@ export const useUniverseStore = defineStore('universe', {
     isMobile: false,
     showMobileGrid: false,
     portalActive: false,
-    viewMode: '3d' // '3d' or 'grid'
+    viewMode: 'grid' // '3d' or 'grid'
   }),
 
   getters: {
@@ -54,9 +54,6 @@ export const useUniverseStore = defineStore('universe', {
 
     setMobile(value) {
       this.isMobile = value
-      if (value) {
-        this.viewMode = 'grid'
-      }
     },
 
     toggleViewMode() {

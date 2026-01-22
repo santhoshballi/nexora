@@ -15,6 +15,8 @@
     "type-check": "vue-tsc --build --force",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "analyze": "vite-bundle-analyzer dist",
     "prepare": "husky"
   },
   "dependencies": {
@@ -27,13 +29,17 @@
     "three": "^0.182.0",
     "uuid": "^13.0.0",
     "vue": "^3.5.26",
-    "vue-router": "^4.6.4"
+    "vue-router": "^4.6.4",
+    "lucide-vue-next": "^0.344.0",
+    "@headlessui/vue": "^1.7.16",
+    "@tanstack/vue-query": "^5.17.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@types/three": "^0.182.0",
     "@vitejs/plugin-vue": "^6.0.3",
     "@vitest/coverage-v8": "^4.0.17",
+    "@vitest/ui": "^4.0.17",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
     "eslint": "^9.39.2",
@@ -46,6 +52,7 @@
     "prettier": "^3.8.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
+    "vite-bundle-analyzer": "^0.7.0",
     "vite-plugin-glsl": "^1.5.5",
     "vite-plugin-vue-devtools": "^8.0.5",
     "vitest": "^4.0.17",

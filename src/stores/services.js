@@ -5,17 +5,17 @@ export const useServicesStore = defineStore('services', {
     services: {
       cipher: {
         id: 'cipher',
-        name: 'CIPHER',
-        tagline: 'Code & Development',
+        name: 'TYPING PRACTICE',
+        tagline: 'Space Word Defense',
         description:
-          'Full-stack development, custom software solutions, and digital transformation',
+          'A typing game where you type words to shoot them down. Defend your spaceship by typing attacking words before they reach you. Fast-paced typing action with visual word destruction.',
         theme: 'matrix',
         color: '#00ff41',
         accentColor: '#003b00',
         nodeShape: 'icosahedron',
-        position: { x: 0, y: 2, z: 8 },
-        features: ['Custom Software', 'Web Applications', 'Mobile Development', 'API Integration'],
-        icon: '{ }'
+        position: { x: 0, y: -2, z: 15 },
+        features: ['Word Shooting', 'Typing Speed', 'Space Defense', 'Visual Word Effects'],
+        icon: '\u2694'
       },
       aurora: {
         id: 'aurora',
@@ -26,7 +26,7 @@ export const useServicesStore = defineStore('services', {
         color: '#bf40bf',
         accentColor: '#00ffff',
         nodeShape: 'torusKnot',
-        position: { x: 6, y: 1, z: 5 },
+        position: { x: 11, y: -3, z: 10 },
         features: ['UI/UX Design', 'Brand Identity', 'Motion Graphics', 'Design Systems'],
         icon: '~'
       },
@@ -39,7 +39,7 @@ export const useServicesStore = defineStore('services', {
         color: '#4169e1',
         accentColor: '#ffffff',
         nodeShape: 'brain',
-        position: { x: 8, y: -1, z: 0 },
+        position: { x: 16, y: -5, z: 2 },
         features: ['AI Strategy', 'ML Models', 'Chatbots', 'Automation'],
         icon: '\u03A8'
       },
@@ -52,7 +52,7 @@ export const useServicesStore = defineStore('services', {
         color: '#4b0082',
         accentColor: '#9932cc',
         nodeShape: 'blackHole',
-        position: { x: 6, y: -3, z: -5 },
+        position: { x: 11, y: -8, z: -10 },
         features: ['Cloud Migration', 'DevOps', 'Kubernetes', 'Serverless'],
         icon: '\u25CE'
       },
@@ -65,7 +65,7 @@ export const useServicesStore = defineStore('services', {
         color: '#ff4500',
         accentColor: '#ffd700',
         nodeShape: 'pulsingSphere',
-        position: { x: 0, y: -4, z: -8 },
+        position: { x: 0, y: -10, z: -15 },
         features: ['SEO/SEM', 'Social Media', 'Content Strategy', 'Analytics'],
         icon: '\u223F'
       },
@@ -78,7 +78,7 @@ export const useServicesStore = defineStore('services', {
         color: '#00bfff',
         accentColor: '#ff69b4',
         nodeShape: 'atom',
-        position: { x: -6, y: -3, z: -5 },
+        position: { x: -11, y: -8, z: -10 },
         features: ['Data Analysis', 'Visualization', 'BI Dashboards', 'Predictive Models'],
         icon: '\u2B21'
       },
@@ -91,7 +91,7 @@ export const useServicesStore = defineStore('services', {
         color: '#ff6600',
         accentColor: '#ff0000',
         nodeShape: 'flame',
-        position: { x: -8, y: -1, z: 0 },
+        position: { x: -16, y: -5, z: 2 },
         features: ['Video Production', 'Post-Production', 'Animation', 'VFX'],
         icon: '\u2B50'
       },
@@ -104,7 +104,7 @@ export const useServicesStore = defineStore('services', {
         color: '#e0ffff',
         accentColor: '#87ceeb',
         nodeShape: 'crystal',
-        position: { x: -6, y: 1, z: 5 },
+        position: { x: -11, y: -3, z: 10 },
         features: ['Security Audits', 'Penetration Testing', 'Compliance', 'Encryption'],
         icon: '\u2744'
       },
@@ -117,7 +117,7 @@ export const useServicesStore = defineStore('services', {
         color: '#228b22',
         accentColor: '#8b4513',
         nodeShape: 'tree',
-        position: { x: -4, y: 3, z: 3 },
+        position: { x: -8, y: 0, z: 6 },
         features: ['Store Setup', 'Payment Integration', 'Inventory Systems', 'Fulfillment'],
         icon: '\u2698'
       },
@@ -130,7 +130,7 @@ export const useServicesStore = defineStore('services', {
         color: '#9400d3',
         accentColor: '#00ced1',
         nodeShape: 'waveRing',
-        position: { x: 4, y: 3, z: 3 },
+        position: { x: 8, y: 0, z: 6 },
         features: ['Sound Design', 'Music Production', 'Podcasts', 'Audio Branding'],
         icon: '\u224B'
       },
@@ -143,7 +143,7 @@ export const useServicesStore = defineStore('services', {
         color: '#ff1493',
         accentColor: '#00ff7f',
         nodeShape: 'prism',
-        position: { x: 3, y: 4, z: -2 },
+        position: { x: 6, y: 2, z: -5 },
         features: ['Product Photography', 'Retouching', 'Asset Libraries', 'Virtual Tours'],
         icon: '\u25B3'
       },
@@ -156,7 +156,7 @@ export const useServicesStore = defineStore('services', {
         color: '#ff00ff',
         accentColor: '#00ffff',
         nodeShape: 'morphingBlob',
-        position: { x: -3, y: 4, z: -2 },
+        position: { x: -6, y: 2, z: -5 },
         features: ['2D Animation', '3D Animation', 'Motion Design', 'Interactive'],
         icon: '\u221E'
       }

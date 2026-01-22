@@ -60,36 +60,41 @@ function getServiceStyle(service) {
 
 <style scoped>
 .mobile-grid {
-  position: relative;
+  position: fixed;
   width: 100%;
   height: 100%;
-  padding: 120px 20px 40px;
-  overflow-y: auto;
+  padding: 140px 20px 20px;
+  overflow: hidden;
   background: linear-gradient(180deg, #0a0a15 0%, #0f0f1a 100%);
+  top: 0;
+  left: 0;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 12px;
   max-width: 500px;
+  max-height: calc(100vh - 180px);
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .service-card {
   position: relative;
   aspect-ratio: 1;
   background: rgba(20, 20, 30, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
+  max-height: 140px;
 }
 
 .service-card:active {
@@ -103,41 +108,44 @@ function getServiceStyle(service) {
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at center, var(--service-color) 0%, transparent 70%);
-  opacity: 0.1;
+  opacity: 0.15;
   transition: opacity 0.3s ease;
 }
 
 .service-card:active .card-glow {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .card-icon {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   background: linear-gradient(135deg, var(--service-color), var(--accent-color));
-  border-radius: 8px;
+  border-radius: 10px;
   color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-name {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--service-color);
   letter-spacing: 0.1em;
+  text-shadow: 0 0 10px var(--service-color);
 }
 
 .card-tagline {
   margin: 0;
-  font-size: 0.625rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-align: center;
+  line-height: 1.2;
 }
 
 .card-badge {
@@ -192,9 +200,29 @@ function getServiceStyle(service) {
   border-top: none;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 500px) {
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .service-card {
+    max-height: 130px;
+    padding: 0.8rem;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .card-name {
+    font-size: 0.75rem;
+  }
+
+  .card-tagline {
+    font-size: 0.55rem;
   }
 }
 </style>
