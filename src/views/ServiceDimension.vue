@@ -78,7 +78,8 @@ function handleAuthClose() {
   showAuthForm.value = false
 }
 
-function handleGameComplete() {
+function handleGameComplete(finalScore) {
+  console.log(`Cipher game completed with score: ${finalScore}`)
   // Could save high score, unlock achievements, etc.
 }
 </script>
@@ -111,6 +112,7 @@ function handleGameComplete() {
       <!-- Typing Game for Cipher Service -->
       <TypingGame
         v-if="service?.id === 'cipher'"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000"
         :service="service"
         @complete="handleGameComplete"
       />
